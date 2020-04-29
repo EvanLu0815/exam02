@@ -154,7 +154,7 @@ void record(void) {
    index++;
    wait(0.1);
    a[index] = (x * x + y * y) ^ (1/2) * 0.1 * 0.1 / 2;
-   q[index] = 9.8 * a;
+   q[index] = 9.8 * a[index];
 
 }
 
@@ -185,6 +185,8 @@ void stopRecord(void) {
         printf("%f, %f, %f\n", 
         x_rec[j] * 1000.0, y_rec[j] * 1000.0, z_rec[j] * 1000.0);
         wait(0.1);
+        printf("%f, %f\n",
+        a[j], q[j]);
     }
 
   }
